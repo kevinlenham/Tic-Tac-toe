@@ -22,10 +22,10 @@ Steps
 
 Usage
 
-    Start the bot by running node index.js.
+    Start the bot by running node DiscordBot.js.
     Invite the bot to your Discord server.
     Use the following commands to play:
-
-    !startgame - Starts a new game of Tic-Tac-Toe.
-    !move <cell> - Makes your move by specifying the cell where you want to place your 'X' (replace <cell> with the cell number).
-    !endgame - Ends the current game and declares a forfeit.
+        !start: Start a new game of Tic Tac Toe.
+        !move [row] [col]: Make a move at the specified row and column.
+                  (e.g. \`!move 0 1\` to put your piece in the first row, second column)
+        !help: Display this help menu.
