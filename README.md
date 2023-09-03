@@ -12,7 +12,7 @@ Features:
 Technologies Used
 
     Node.js
-    Discord.py
+    npm
 
 Steps
 
