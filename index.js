@@ -1,5 +1,9 @@
+
+const dotenv = require('dotenv');
 const { Client, GatewayIntentBits } = require('discord.js');
 const TicTacToe = require('./TicTacToe.js');
+
+dotenv.config();
 
 const client = new Client({
     intents: [
@@ -31,13 +35,12 @@ client.on('messageCreate', msg => {
 
         if (playerMoveResult.includes("wins") || playerMoveResult.includes("Draw")) {
             return;
+        } else {
+            const botMoveResult = game.botMove();
+            msg.channel.send(botMoveResult);
         }
-
-        const botMoveResult = game.botMove();
-        msg.channel.send(botMoveResult);
     } else if(msg.content.startsWith('!help')) {
         msg.channel.send(game.displayHelp());
     }
 });
-
-client.login('MTE0NDg3NTE5NTIwNzc3ODMwNQ.Gk--MB.5cZWrjOMfoUCGNfsWCZJnMgdwGsIuq9H88TX_U');
+client.login(process.env.discord_key);
